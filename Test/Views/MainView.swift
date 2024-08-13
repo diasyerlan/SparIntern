@@ -8,8 +8,42 @@
 import SwiftUI
 
 struct MainView: View {
+    let columns = [GridItem(.fixed(168), spacing: 2),
+                   GridItem(.fixed(168), spacing: 2)]
+    @State private var isList = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                Divider()
+                Spacer()
+                if isList {
+                    
+                }
+                else {
+                    ScrollView {
+                        LazyVGrid(columns: columns) {
+                            
+                        }
+                    }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        isList.toggle()
+                    } label: {
+                        Image(systemName: isList ? "rectangle.grid.1x2" : "square.grid.2x2")
+                            .resizable()
+                            .frame(width: 16, height: 16)
+                            .fontWeight(.bold)
+                            .foregroundColor(.customGreen)
+                            .padding(12)
+                            .background(.customGray)
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                    }
+                }
+            }
+        }
     }
 }
 
