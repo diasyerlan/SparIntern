@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FB6023A2C6BF3D800061BB7 /* ProductListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB602392C6BF3D800061BB7 /* ProductListCardView.swift */; };
+		3FB6023C2C6BF41900061BB7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6023B2C6BF41900061BB7 /* Product.swift */; };
+		3FB6023E2C6CBB9900061BB7 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6023D2C6CBB9900061BB7 /* RoundedCorners.swift */; };
+		3FB602402C6CD61500061BB7 /* Fontspring-DEMO-ceraroundpro-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3FB6023F2C6CD61400061BB7 /* Fontspring-DEMO-ceraroundpro-bold.otf */; };
 		3FB86D5C2C6B77AA006AAA2D /* TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB86D5B2C6B77AA006AAA2D /* TestApp.swift */; };
 		3FB86D5E2C6B77AA006AAA2D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB86D5D2C6B77AA006AAA2D /* ContentView.swift */; };
 		3FB86D602C6B77AB006AAA2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FB86D5F2C6B77AB006AAA2D /* Assets.xcassets */; };
@@ -16,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FB602392C6BF3D800061BB7 /* ProductListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCardView.swift; sourceTree = "<group>"; };
+		3FB6023B2C6BF41900061BB7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		3FB6023D2C6CBB9900061BB7 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
+		3FB6023F2C6CD61400061BB7 /* Fontspring-DEMO-ceraroundpro-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fontspring-DEMO-ceraroundpro-bold.otf"; sourceTree = "<group>"; };
+		3FB602412C6CD64500061BB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3FB86D582C6B77AA006AAA2D /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB86D5B2C6B77AA006AAA2D /* TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApp.swift; sourceTree = "<group>"; };
 		3FB86D5D2C6B77AA006AAA2D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +64,7 @@
 		3FB86D5A2C6B77AA006AAA2D /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				3FB602412C6CD64500061BB7 /* Info.plist */,
 				3FB86D702C6BF295006AAA2D /* Components */,
 				3FB86D6B2C6B9109006AAA2D /* ViewModels */,
 				3FB86D6A2C6B9106006AAA2D /* Models */,
@@ -62,6 +72,7 @@
 				3FB86D5B2C6B77AA006AAA2D /* TestApp.swift */,
 				3FB86D5D2C6B77AA006AAA2D /* ContentView.swift */,
 				3FB86D5F2C6B77AB006AAA2D /* Assets.xcassets */,
+				3FB6023F2C6CD61400061BB7 /* Fontspring-DEMO-ceraroundpro-bold.otf */,
 				3FB86D612C6B77AB006AAA2D /* Preview Content */,
 			);
 			path = Test;
@@ -87,6 +98,7 @@
 		3FB86D6A2C6B9106006AAA2D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3FB6023B2C6BF41900061BB7 /* Product.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,6 +113,8 @@
 		3FB86D702C6BF295006AAA2D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3FB602392C6BF3D800061BB7 /* ProductListCardView.swift */,
+				3FB6023D2C6CBB9900061BB7 /* RoundedCorners.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -163,6 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB602402C6CD61500061BB7 /* Fontspring-DEMO-ceraroundpro-bold.otf in Resources */,
 				3FB86D632C6B77AB006AAA2D /* Preview Assets.xcassets in Resources */,
 				3FB86D602C6B77AB006AAA2D /* Assets.xcassets in Resources */,
 			);
@@ -179,6 +194,9 @@
 				3FB86D6D2C6B9125006AAA2D /* MainView.swift in Sources */,
 				3FB86D6F2C6B94EC006AAA2D /* CartView.swift in Sources */,
 				3FB86D5C2C6B77AA006AAA2D /* TestApp.swift in Sources */,
+				3FB6023A2C6BF3D800061BB7 /* ProductListCardView.swift in Sources */,
+				3FB6023C2C6BF41900061BB7 /* Product.swift in Sources */,
+				3FB6023E2C6CBB9900061BB7 /* RoundedCorners.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +333,7 @@
 				DEVELOPMENT_TEAM = RHJ877LGY2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Test/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +363,7 @@
 				DEVELOPMENT_TEAM = RHJ877LGY2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Test/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
