@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var cartManager = CartManager()
+    @StateObject var cartViewModel = CartViewModel()
     var body: some View {
         TabView {
             MainView()
@@ -21,17 +21,11 @@ struct ContentView: View {
                 }
         }
         .tint(.black)
-    }
-    init() {
-        for familyName in UIFont.familyNames {
-            print(familyName)
-            for fontName in UIFont.fontNames(forFamilyName: familyName) {
-                print("--\(fontName)")
-            }
-        }
+        .environmentObject(cartViewModel)
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(CartViewModel())
 }

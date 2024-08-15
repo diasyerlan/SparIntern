@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
-    let columns = [GridItem(.fixed(168), spacing: 2),
-                   GridItem(.fixed(168), spacing: 2)]
+    @EnvironmentObject var cartViewModel: CartViewModel
+    let columns = [GridItem(.fixed(168), spacing: 5),
+                   GridItem(.fixed(168), spacing: 5)]
     @State private var isList = false
     var body: some View {
         NavigationStack {
@@ -22,7 +23,9 @@ struct MainView: View {
                 else {
                     ScrollView {
                         LazyVGrid(columns: columns) {
-                            
+                            ForEach(productList, id: \.self) {product in
+                                ProductListCardView(product: product)
+                            }
                         }
                     }
                 }
@@ -49,4 +52,5 @@ struct MainView: View {
 
 #Preview {
     MainView()
+        .environmentObject(CartViewModel())
 }

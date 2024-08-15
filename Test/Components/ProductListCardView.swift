@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct ProductListCardView: View {
-    
+    @EnvironmentObject var cartViewModel: CartViewModel
+    @State private var piecesOrKg: PiecesOrKg = .kg
     var product: Product
     var body: some View {
             ZStack {
                 Color(.white)
                 
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 0) {
                     ZStack{
                         Image(product.image)
                             .resizable()
                             .frame(width: 168, height: 168)
+                        // upon image product details
                         VStack {
                             HStack(alignment: .top) {
+                                // special offer
                                 if let specialOffer = product.specialOffer {
                                     Text(specialOffer.type)
                                         .font(.system(size: 10))
@@ -32,30 +35,12 @@ struct ProductListCardView: View {
                                         .clipShape(RoundedCorners(corners: [.bottomRight, .topRight], radius: 6))
                                 }
                                 Spacer()
-                                VStack(spacing: 16) {
-                                    Button {} label: {
-                                        Image("list")
-                                            .resizable()
-                                            .frame(width: 14, height: 13.71)
-                                            .fontWeight(.bold)
-                                            .foregroundStyle(.black.opacity(0.4))
-                                    }
-                    
-                                    Button {} label: {
-                                        Image("heart")
-                                            .resizable()
-                                            .frame(width: 13.27, height: 11.82)
-                                            .fontWeight(.bold)
-                                            .foregroundStyle(.black.opacity(0.4))
-                                    }
-                                        
-                                }
-                                .frame(width: 32, height: 64)
-                                .background(.white.opacity(0.75))
-                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                                // list and heart icons
+                                ListAndHeartIcons()
                             }
                             Spacer()
                             HStack {
+                                // rating
                                 HStack(spacing: 2) {
                                     Image("star")
                                         .resizable()
@@ -65,6 +50,7 @@ struct ProductListCardView: View {
                                         .font(.system(size: 12))
                                 }
                                 Spacer()
+                                // discount
                                 if let discount = product.discount {
                                     HStack(spacing: 0) {
                                         Text("\(discount)")
@@ -82,40 +68,21 @@ struct ProductListCardView: View {
                     }
                     .frame(width: 168, height: 168)
                     Text(product.name)
-                        .font(.system(size: 12))
+                        .font(.caption2)
+                        .fontWeight(.light)
                         .padding(.horizontal, 4)
+                        
                     Spacer()
-                    HStack {
-                        VStack(alignment: .leading) {
-                            HStack(alignment: .top, spacing: 2) {
-                                Text("\(product.price)")
-                                    .font(.custom("FONTSPRING DEMO - Cera Round Pro", size: 20))
-                                Text("90")
-                                    .font(.custom("FONTSPRING DEMO - Cera Round Pro", size: 16))
-                                // ruble per kg amount
-                                Image("PerAmountIcon")
-                                    .resizable()
-                                    .frame(width: 20, height: 20)
-                            }
-                            Text("199,0")
-                                .strikethrough()
-                                .font(.system(size: 12))
-                                .foregroundStyle(Color(.systemGray))
-                                
-                        }
-                        Spacer()
-                        Button {} label: {
-                            Image("cart")
-                                .resizable()
-                                .frame(width: 13.51, height: 13)
-                                .foregroundStyle(.white)
-                                .frame(width: 48, height: 36)
-                                .background(.customGreen)
-                                .clipShape(RoundedRectangle(cornerRadius: 40))
-                                
-                        }
+                    // kg switch
+                    SwitchView(product: product, piecesOrKg: $piecesOrKg)
+                    if !cartViewModel.products.contains(product) {
+                        //price and add to cart button
+                        AddToCartButtonView(product: product)
                     }
-                    .padding(4)
+                    // change product quantity button
+                    else {
+                        ChangeQuantityButtonView(product: product)
+                    }
                 }
                 
             }
@@ -126,5 +93,6 @@ struct ProductListCardView: View {
 }
 
 #Preview {
-ProductListCardView(product: productList[6])
+ProductListCardView(product: productList[1])
+        .environmentObject(CartViewModel())
 }
