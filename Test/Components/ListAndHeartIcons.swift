@@ -18,9 +18,9 @@ struct ListAndHeartIcons: View {
                     .frame(width: 14, height: 13.71)
                     .fontWeight(.bold)
                     .foregroundStyle(.black.opacity(0.4))
-                    
+                
             }
-
+            
             Button {
                 isHeartTapped.toggle()
             } label: {
@@ -30,7 +30,7 @@ struct ListAndHeartIcons: View {
                     .fontWeight(.bold)
                     .foregroundStyle(.black.opacity(0.4))
             }
-                
+            
         }
         .frame(width: 32, height: 64)
         .background(.white.opacity(0.75))

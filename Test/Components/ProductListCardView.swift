@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProductListCardView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
-    var product: Product
+    @Binding var product: Product
     var body: some View {
         HStack {
             ZStack{
@@ -27,7 +27,7 @@ struct ProductListCardView: View {
                                 .padding(.trailing, 2)
                                 .padding(3)
                                 .foregroundStyle(.white)
-                                .background(.customPink)
+                                .background(specialOffer == .udar ? .customPink : specialOffer == .new ? .customPurple : .customGreen2)
                                 .clipShape(RoundedCorners(corners: [.bottomRight, .topRight], radius: 6))
                         }
                         Spacer()
@@ -73,7 +73,6 @@ struct ProductListCardView: View {
                                 .foregroundStyle(Color(.systemGray))
                         }
                         Text(product.name)
-                            .lineLimit(2)
                             .font(.caption2)
                             .fontWeight(.light)
                     }
@@ -88,18 +87,18 @@ struct ProductListCardView: View {
                 }
                 // change product quantity button
                 else {
-                    ChangeQuantityButtonView(product: product)
+                    ChangeQuantityButtonView(fromCartPage: false, product: $product)
                 }
             }
-
+            
         }
         .padding(8)
         Divider()
-
+        
     }
 }
 
 #Preview {
-    ProductListCardView(product: productList[14])
+    ProductListCardView(product: .constant(productList[14]))
         .environmentObject(CartViewModel())
 }
