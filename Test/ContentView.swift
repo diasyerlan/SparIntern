@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    init() {
+        UITabBar.appearance().backgroundColor = .white
+    }
     @StateObject var cartViewModel = CartViewModel()
+    @StateObject var homeViewModel = HomeViewModel()
     var body: some View {
         TabView {
             MainView()
@@ -21,7 +25,9 @@ struct ContentView: View {
                 }
         }
         .tint(.black)
+        .background(.white)
         .environmentObject(cartViewModel)
+        .environmentObject(homeViewModel)
     }
 }
 

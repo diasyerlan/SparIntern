@@ -9,17 +9,24 @@ import SwiftUI
 
 struct ChangeQuantityButtonView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
-    var product: Product
-    @State private var kg = 0.1
+    var fromCartPage: Bool
+    @Binding var product: Product
     var body: some View {
         HStack {
             Button {
-                if kg > 0.11 {
-                    print(kg)
-                    kg -= 0.1
-                } else {
-                    withAnimation {
+                if product.count > 0.11 {
+                    if !fromCartPage {
                         cartViewModel.removeFromCart(product: product)
+                        product.count -= 0.1
+                        cartViewModel.addToCart(product: product)
+                    } else {
+                        product.count -= 0.1
+                    }
+                } else {
+                    if !fromCartPage {
+                        withAnimation {
+                            cartViewModel.removeFromCart(product: product)
+                        }
                     }
                 }
             } label: {
@@ -27,16 +34,21 @@ struct ChangeQuantityButtonView: View {
             }
             Spacer()
             VStack(spacing: 0) {
-                
-                Text("\(String(format: "%.1f", kg)) кг")
+                Text("\(String(format: "%.1f", product.count)) кг")
                     .fontWeight(.bold)
-                Text("~\(String(format: "%.1f",kg * Double(product.price)))")
+                Text("~\(String(format: "%.1f",product.count * Double(product.price))) ₽")
             }
             .font(.footnote)
-
+            
             Spacer()
             Button {
-                kg += 0.1
+                if !fromCartPage {
+                    product.count += 0.1
+                    cartViewModel.removeFromCart(product: product)
+                    cartViewModel.addToCart(product: product)
+                } else {
+                    product.count += 0.1
+                }
             } label: {
                 Image(systemName: "plus")
             }
@@ -51,5 +63,5 @@ struct ChangeQuantityButtonView: View {
 }
 
 #Preview {
-    ChangeQuantityButtonView(product: productList[3])
+    ChangeQuantityButtonView(fromCartPage: false, product: .constant(productList[3]))
 }

@@ -3,12 +3,13 @@
 //  Test
 //
 //  Created by Dias Yerlan on 13.08.2024.
-//
+//p
 
 import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var cartViewModel: CartViewModel
+    @EnvironmentObject var homeViewModel: HomeViewModel
     let columns = [GridItem(.fixed(168), spacing: 5),
                    GridItem(.fixed(168), spacing: 5)]
     @State private var isList = false
@@ -19,16 +20,18 @@ struct MainView: View {
                 Divider()
                 Spacer()
                 ScrollView {
+                    // list view
                     if isList {
                         LazyVStack {
-                            ForEach(productList, id: \.self) {product in
+                            ForEach($homeViewModel.products, id: \.self) {product in
                                 ProductListCardView(product: product)
                             }
                         }
                     }
+                    // grid view
                     else {
                         LazyVGrid(columns: columns) {
-                            ForEach(productList, id: \.self) {product in
+                            ForEach($homeViewModel.products, id: \.self) {product in
                                 ProductGridCardView(product: product)
                             }
                         }
@@ -37,6 +40,7 @@ struct MainView: View {
                 .scrollIndicators(.hidden)
             }
             .toolbar {
+                // toolbar switch
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
                         isList.toggle()
@@ -59,4 +63,5 @@ struct MainView: View {
 #Preview {
     MainView()
         .environmentObject(CartViewModel())
+        .environmentObject(HomeViewModel())
 }
