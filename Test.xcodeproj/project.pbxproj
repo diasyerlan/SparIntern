@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3FB6023A2C6BF3D800061BB7 /* ProductListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB602392C6BF3D800061BB7 /* ProductListCardView.swift */; };
+		3FB6023A2C6BF3D800061BB7 /* ProductGridCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB602392C6BF3D800061BB7 /* ProductGridCardView.swift */; };
 		3FB6023C2C6BF41900061BB7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6023B2C6BF41900061BB7 /* Product.swift */; };
 		3FB6023E2C6CBB9900061BB7 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6023D2C6CBB9900061BB7 /* RoundedCorners.swift */; };
 		3FB602402C6CD61500061BB7 /* Fontspring-DEMO-ceraroundpro-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3FB6023F2C6CD61400061BB7 /* Fontspring-DEMO-ceraroundpro-bold.otf */; };
@@ -16,6 +16,7 @@
 		3FB6024D2C6DEE9C00061BB7 /* AddToCartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6024C2C6DEE9C00061BB7 /* AddToCartButtonView.swift */; };
 		3FB6024F2C6DEF6F00061BB7 /* ChangeQuantityButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6024E2C6DEF6F00061BB7 /* ChangeQuantityButtonView.swift */; };
 		3FB602512C6DF12800061BB7 /* ListAndHeartIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB602502C6DF12800061BB7 /* ListAndHeartIcons.swift */; };
+		3FB602532C6DF97500061BB7 /* ProductListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB602522C6DF97500061BB7 /* ProductListCardView.swift */; };
 		3FB86D5C2C6B77AA006AAA2D /* TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB86D5B2C6B77AA006AAA2D /* TestApp.swift */; };
 		3FB86D5E2C6B77AA006AAA2D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB86D5D2C6B77AA006AAA2D /* ContentView.swift */; };
 		3FB86D602C6B77AB006AAA2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FB86D5F2C6B77AB006AAA2D /* Assets.xcassets */; };
@@ -25,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3FB602392C6BF3D800061BB7 /* ProductListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCardView.swift; sourceTree = "<group>"; };
+		3FB602392C6BF3D800061BB7 /* ProductGridCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductGridCardView.swift; sourceTree = "<group>"; };
 		3FB6023B2C6BF41900061BB7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		3FB6023D2C6CBB9900061BB7 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		3FB6023F2C6CD61400061BB7 /* Fontspring-DEMO-ceraroundpro-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fontspring-DEMO-ceraroundpro-bold.otf"; sourceTree = "<group>"; };
@@ -35,6 +36,7 @@
 		3FB6024C2C6DEE9C00061BB7 /* AddToCartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartButtonView.swift; sourceTree = "<group>"; };
 		3FB6024E2C6DEF6F00061BB7 /* ChangeQuantityButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeQuantityButtonView.swift; sourceTree = "<group>"; };
 		3FB602502C6DF12800061BB7 /* ListAndHeartIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAndHeartIcons.swift; sourceTree = "<group>"; };
+		3FB602522C6DF97500061BB7 /* ProductListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCardView.swift; sourceTree = "<group>"; };
 		3FB86D582C6B77AA006AAA2D /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB86D5B2C6B77AA006AAA2D /* TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestApp.swift; sourceTree = "<group>"; };
 		3FB86D5D2C6B77AA006AAA2D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,7 +126,8 @@
 		3FB86D702C6BF295006AAA2D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				3FB602392C6BF3D800061BB7 /* ProductListCardView.swift */,
+				3FB602392C6BF3D800061BB7 /* ProductGridCardView.swift */,
+				3FB602522C6DF97500061BB7 /* ProductListCardView.swift */,
 				3FB6023D2C6CBB9900061BB7 /* RoundedCorners.swift */,
 				3FB6024A2C6DED5E00061BB7 /* SwitchView.swift */,
 				3FB6024C2C6DEE9C00061BB7 /* AddToCartButtonView.swift */,
@@ -211,10 +214,11 @@
 				3FB6024D2C6DEE9C00061BB7 /* AddToCartButtonView.swift in Sources */,
 				3FB86D5C2C6B77AA006AAA2D /* TestApp.swift in Sources */,
 				3FB602492C6D2D5A00061BB7 /* CartViewModel.swift in Sources */,
-				3FB6023A2C6BF3D800061BB7 /* ProductListCardView.swift in Sources */,
+				3FB6023A2C6BF3D800061BB7 /* ProductGridCardView.swift in Sources */,
 				3FB6024F2C6DEF6F00061BB7 /* ChangeQuantityButtonView.swift in Sources */,
 				3FB6023C2C6BF41900061BB7 /* Product.swift in Sources */,
 				3FB602512C6DF12800061BB7 /* ListAndHeartIcons.swift in Sources */,
+				3FB602532C6DF97500061BB7 /* ProductListCardView.swift in Sources */,
 				3FB6023E2C6CBB9900061BB7 /* RoundedCorners.swift in Sources */,
 				3FB6024B2C6DED5F00061BB7 /* SwitchView.swift in Sources */,
 			);

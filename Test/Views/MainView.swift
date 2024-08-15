@@ -15,20 +15,26 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                Spacer(minLength: 4)
                 Divider()
                 Spacer()
-                if isList {
-                    
-                }
-                else {
-                    ScrollView {
-                        LazyVGrid(columns: columns) {
+                ScrollView {
+                    if isList {
+                        LazyVStack {
                             ForEach(productList, id: \.self) {product in
                                 ProductListCardView(product: product)
                             }
                         }
                     }
+                    else {
+                        LazyVGrid(columns: columns) {
+                            ForEach(productList, id: \.self) {product in
+                                ProductGridCardView(product: product)
+                            }
+                        }
+                    }
                 }
+                .scrollIndicators(.hidden)
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {

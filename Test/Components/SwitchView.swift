@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SwitchView: View {
     var product: Product
-    @Binding var piecesOrKg: PiecesOrKg
+    @State private var piecesOrKg: PiecesOrKg = .kg
     var body: some View {
         if product.piecesOrKg != nil {
             Picker("", selection: $piecesOrKg) {
@@ -25,5 +25,5 @@ struct SwitchView: View {
 }
 
 #Preview {
-    SwitchView(product: productList[3], piecesOrKg: .constant(.kg))
+    SwitchView(product: productList[3])
 }
